@@ -77,7 +77,7 @@ function generatePrompt(mood, imgCount, colorCount) {
   let imgH = imgW * (4 / 3);
   let titleH = 140;
   let swatchH = 40;
-  let boardH = titleH + imgH + swatchH + 80;
+  let boardH = titleH + imgH + swatchH + 95;
 
   resizeCanvas(boardW, boardH, 20);
   clear();
@@ -87,17 +87,17 @@ function generatePrompt(mood, imgCount, colorCount) {
   let boardY = 0;
 
   // Shadow
-  // push();
-  // noStroke();
-  // fill(0, 25);
-  // rect(boardX + 8, boardY + 8, boardW, boardH - 20, 20);
-  // pop();
+  push();
+  noStroke();
+  fill(0, 25);
+  rect(boardX + 8, boardY + 8, boardW, boardH - 20, 20);
+  pop();
 
   // Card background
   fill('#FAF5EF');
   stroke(200);
   strokeWeight(2);
-  rect(boardX, boardY, boardW, boardH - 20, 20);
+  rect(boardX, boardY, boardW, boardH, 15);
 
   // Use the custom font
   textFont(sourGummyFont);
@@ -116,7 +116,7 @@ function generatePrompt(mood, imgCount, colorCount) {
   if (noGoRules[mood]) {
     textSize(boardW * 0.025);
     fill(50);
-    text(`No-go: ${noGoRules[mood]}`, boardW / 2, boardY + boardH - 30);
+    text(`No-go: ${noGoRules[mood]}`, boardW / 2, boardY + boardH - 50);
   }
 
   // Images

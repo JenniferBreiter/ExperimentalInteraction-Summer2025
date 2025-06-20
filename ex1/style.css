@@ -15,7 +15,8 @@ body {
   box-shadow: 0 2px 12px rgba(113, 93, 93, 0.2);
   display: flex;
   gap: 10px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap; /* Prevent wrapping */
+  overflow-x: auto;   /* Allow horizontal scroll if needed */
   align-items: center;
   z-index: 1000;
 }
@@ -24,7 +25,14 @@ body {
 #controls select,
 #controls input,
 #controls button {
-  font-size: 16px;
+  font-size: 15px;
+}
+
+#controls select,
+#controls input[type="number"] {
+  width: 80px; /* fixed width */
+  box-sizing: border-box;
+  flex-shrink: 0; /* Prevent shrinking */
 }
 
 #controls button {
