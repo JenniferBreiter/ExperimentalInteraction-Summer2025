@@ -79,7 +79,7 @@ function generatePrompt(mood, imgCount, colorCount) {
   let swatchH = 40;
   let boardH = titleH + imgH + swatchH + 80;
 
-  resizeCanvas(boardW, boardH);
+  resizeCanvas(boardW, boardH, 20);
   clear();
   background(240);
 
