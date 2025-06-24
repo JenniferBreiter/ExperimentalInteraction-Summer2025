@@ -60,8 +60,8 @@ function setup() {
     saveCanvas('moodboard', 'png');
   });
 
-  // 👇 Auto-generate moodboard on load
-  const defaultMood = moodSelect.value || "Bold";         // or pick any default from your list
+  // Auto-generate moodboard on load
+  const defaultMood = moodSelect.value || "Bold";     
   const defaultImgCount = parseInt(imgCountInput.value) || 3;
   const defaultColorCount = parseInt(colorCountInput.value) || 5;
 
@@ -99,7 +99,7 @@ function generatePrompt(mood, imgCount, colorCount) {
   strokeWeight(2);
   rect(boardX, boardY, boardW, boardH, 15);
 
-  // Use the custom font
+  // Use custom font
   textFont(sourGummyFont);
   textAlign(CENTER, TOP);
   noStroke();
